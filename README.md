@@ -1,1 +1,1 @@
-# Croptype-Classification
+# Crop-type-Classification
