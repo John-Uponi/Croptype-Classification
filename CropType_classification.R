@@ -58,19 +58,6 @@ dim(df1_train)
 
 names(df1_test)
 
-
-#SAR(AUG, SEP) and S2
-df1_test <- df1_test[c(5:8,13:16,23:26,33:43)]
-df1_train <- df1_train[c(5:8,13:16,23:26,33:43)]
-
-#SAR(SEP, OCT) and S2
-df1_test <- df1_test[c(7:10,15:18,25:28,33:43)]
-df1_train <- df1_train[c(7:10,15:18,25:28,33:43)]
-
-#SAR(AUG, SEP, OCT, growing season mean) and S2
-df1_test <- df1_test[c(5:10,13:18,23:28,31:43)]
-df1_train <- df1_train[c(5:10,13:18,23:28,31:43)]
-
 #All
 df1_test <- df1_test[c(2:43)]
 df1_train <- df1_train[c(2:43)] 
@@ -113,3 +100,4 @@ rfranger.predict<- predict(fit.rf1,TestData[,-41 ])
 confusionMatrix <- caret::confusionMatrix(rfranger.predict,df1_test1$Class)
 capture.output(confusionMatrix, file="T:/Projects/Project2024/CroptypeMapping/New SAR S2 analysis/NewCM2025/SAR_SARmean_S2_confusionMatrix2025e.txt")
 predict(SAR2bb, fit.rf1, overwrite=TRUE, na.rm=TRUE, filename="T:/Projects/Project2024/CroptypeMapping/New SAR S2 analysis/NewCM2025/rf_Oyo_prediction_SAR_SARmean_S2_2025e.tif")
+
